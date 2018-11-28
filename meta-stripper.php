@@ -33,25 +33,38 @@
 
     print "<img src='$originalOnlineDir' width='20%' height='20%'/>";
     $exif = exif_read_data($uploadfile, 0, true);
-    print "<form action='#'>";
-    print "<p>";
-    print "Please select the metadata tags you wish to remove...";
-    print "<ol>";
-    foreach ($exif as $key => $section) {
-      foreach ($section as $name => $value) {
-        // code...
-        print "<li><input type='checkbox' name='$name' value='1' > $key.$name: $value<br /></li>";
+    if(!empty($exif)) {
+      print "<form action='#'>";
+      print "<p>";
+      print "Please select the metadata tags you wish to remove...";
+      print "<ol>";
+      foreach ($exif as $key => $section) {
+        foreach ($section as $name => $value) {
+          print "<li><input type='checkbox' name='$name' value='1' > $name: $value<br /></li>";
+        }
       }
+      print "</ol>";
+      print "<input type='hidden' name='imgURL' value='$originalOnlineDir'>";
+      print "<input type='submit' value='Wipe Metadata'>";
+      print "</form>";
     }
-    print "</ol>";
-    print "<input type='hidden' name='imgURL' value='$originalOnlineDir'>";
-    print "<input type='submit' value='Wipe Metadata'>";
-    print "</form>";
+    elseif (empty($exif)) {
+      #ChromePhp::log("There are no tags in $_FILES['metaful-image']['name']");
+      print "<h2>";
+      print "There are no metadata tags present in this picture, you're already set!";
+      print "</h2>";
+    }
+    else {
+      ChromePhp::log("Unknown error?");
+      print "<p>";
+      print "Unknown error occured, please try again.";
+      print "</p>";
+    }
     unlink($_FILES['metaful-image']['name']);
   }
 
   if(isset($_GET['imgURL']))
   {
-      ChromePhp::warn($_GET);    
+      ChromePhp::warn($_GET);
   }
  ?>
