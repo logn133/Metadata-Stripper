@@ -31,7 +31,6 @@
     ChromePhp::warn($_FILES);
     print "</pre>";
 
-<<<<<<< HEAD
     print "<img src='$originalOnlineDir' width='20%' height='20%'/>";
     $exif = exif_read_data($uploadfile, 0, true);
     print "<form action='#'>";
@@ -50,14 +49,9 @@
     print "</form>";
     unlink($_FILES['metaful-image']['name']);
   }
-=======
-  echo '\nHere is some more debugging info:';
-  print_r($_FILES);
->>>>>>> 4e9550bdfa1f761864bd82f68c34adee69a0558c
 
   if(isset($_GET['imgURL']))
   {
-      ChromePhp::warn($_GET);
-      #ChromePhp::log("Hiya");
+      ChromePhp::warn($_GET);    
   }
  ?>
