@@ -9,7 +9,7 @@ To use the stripper, go to the test site at http://18.188.73.90/meta-stripper.ph
 Open up the file with a php server and bingo bango bongo you're donzo.
 
 ## Notes
-This was originally made with an Amazon EC2 AMI. So double check your variables are correct, and if neccessary edit the '$uploaddir' variable to match your OS and service. 
+This was originally made with an Amazon EC2 AMI. So double check your variables are correct, and if neccessary edit the `$uploaddir` variable to match your OS and service. 
 
 ## ToDo
 ~~- Upload to Github~~
