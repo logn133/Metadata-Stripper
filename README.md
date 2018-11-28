@@ -17,5 +17,4 @@ Open up the file with a php server and bingo bango bongo you're donzo.
 - Catch and delete desired metadata
 - Create a new file with the desired metadata
 - Make the new file downloadable
-- 
 - Create a UX/UI for webpage
