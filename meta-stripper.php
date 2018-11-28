@@ -24,7 +24,7 @@ if(!empty($_FILES['metaful-image'])
       echo "Possible file upload attack!\n";
   }
 
-  echo 'Here is some more debugging info:';
+  echo '\nHere is some more debugging info:';
   print_r($_FILES);
 
   print "</pre>";
